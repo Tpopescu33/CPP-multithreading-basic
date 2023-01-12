@@ -96,8 +96,7 @@ int main()
 
 
     std::vector<info> first(symbols);
-    std::vector<std::string> character;
-    std::vector<int> value;
+ 
 
     //get chars and values  
     for(int i = 0; i< symbols; i++){
