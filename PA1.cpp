@@ -6,77 +6,13 @@
 #include <algorithm>
 #include <pthread.h>
 #include <stdio.h>
+#include "info.h"
 
 
 
 
-//structs
-class info {
 
-public:
-    
-    int getValue(void);
-    void setValue(int i);
-    int getNumBits();
-    void setNumBits(int b);
-    int getFreq();
-    void setFreq(int f);
-    std::string getChar();  
-    void setChar(std::string c);
-    std::string getBV();  
-    void setBV(std::string b);
-       
-    std::vector<std::string> compMsgVector;
 
-private:
-    int value;
-    int numBits;
-    int frequency;
-    std::string character; 
-    std::string binaryValues; 
-    
-    
-    
-};
-
-int info::getValue(void){
-    return value;
-}
-void info::setValue(int i){
-    value = i;
-}
-int info::getNumBits(void){
-    return numBits;
-}
-void info::setNumBits(int b){
-    numBits = b;
-}
-int info::getFreq(void){
-    return frequency;
-}
-void info::setFreq(int f){
-    frequency = f;
-}
-std::string info::getChar(void){
-    return character;
-}
-void info::setChar(std::string c){
-    character = c;
-}
-std::string info::getBV(void){
-    return binaryValues;
-}
-void info::setBV(std::string b){
-    binaryValues = b;
-}
-struct info1 {
-    
-    std::vector<std::string>  character;    
-    std::vector<std::string>  binaryValues;
-    std::string compMsgVector;
-    std::string decodedMsg;
-    
-};
 
 
 
@@ -171,18 +107,13 @@ int main()
         temp3 = temp.substr(2);
         temp1 = temp[0];
         temp2 = stoi(temp3);
-        character.push_back(temp1);
-        value.push_back(temp2);
-        
+        first[i].setChar(temp1);        
+        first[i].setValue(temp2);     
        
         
         
     }
-    //assign values to first struct for first thread func
-    for (int i = 0; i < symbols; i++){
-        first[i].setChar(character.at(i));
-        first[i].setValue(value.at(i));
-    }
+    
     
 
     
