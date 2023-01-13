@@ -82,8 +82,7 @@ int main()
   
     std::string temp;
     std::string temp1;
-    std::string temp3;
-    
+    std::string temp3;    
     int temp2 = 0;
     int symbols;
    //get # of symbols
@@ -100,9 +99,7 @@ int main()
 
     //get chars and values  
     for(int i = 0; i< symbols; i++){
-        getline(std::cin, temp);
-        
-      
+        getline(std::cin, temp);     
         temp3 = temp.substr(2);
         temp1 = temp[0];
         temp2 = stoi(temp3);
