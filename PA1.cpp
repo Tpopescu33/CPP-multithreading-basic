@@ -59,8 +59,8 @@ void * decode1(void *x_void_ptr)
    //decode message
    
     for ( int i = 0; i < x_ptr->binaryValues.size(); i++){
-        if (x_ptr->compMsgVector == x_ptr->binaryValues[i]){
-            x_ptr->decodedMsg = x_ptr->character[i];
+        if (x_ptr->getCompMsg() == x_ptr->binaryValues[i]){
+            x_ptr->setdecodedMsg(x_ptr->character[i]);
            
         }
          
@@ -190,7 +190,7 @@ int main()
         std::string tempString = "";
         for(int j = 0; j<first[0].getNumBits(); j++){
 
-            second[i/first[0].getNumBits()].compMsgVector.push_back(compMsg.at(i+j));
+            second[i/first[0].getNumBits()].setCompMsg(compMsg.at(i+j));
 
         }
         
@@ -236,7 +236,7 @@ int main()
     std::string decodedMsg = "";
 
     for (int i = 0; i < second.size(); i++){
-        decodedMsg.append(second[i].decodedMsg);
+        decodedMsg.append(second[i].getDecodedMsg());
     }
     
 

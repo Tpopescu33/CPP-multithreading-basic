@@ -60,11 +60,28 @@ std::string info::getBV(void){
 void info::setBV(std::string b){
     binaryValues = b;
 }
-struct info1 {
+class info1 {
+
+    public:
     
     std::vector<std::string>  character;    
     std::vector<std::string>  binaryValues;
-    std::string compMsgVector;
+    std::string getCompMsg(){
+        return compMsg;
+    };  
+    void setCompMsg(char c){
+        compMsg.push_back(c);
+    };
+    std::string getDecodedMsg(){
+        return decodedMsg;
+    };  
+    void setdecodedMsg(std::string b){
+        decodedMsg=b;
+    };
+    
+
+    private:
+    std::string compMsg;
     std::string decodedMsg;
     
 };
