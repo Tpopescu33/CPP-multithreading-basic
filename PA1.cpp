@@ -54,13 +54,13 @@ void * decode(void *x_void_ptr)
 void * decode1(void *x_void_ptr)
 {
     
-	struct info1 *x_ptr = (struct info1 *)x_void_ptr;
+	struct info *x_ptr = (struct info *)x_void_ptr;
    
    //decode message
    
-    for ( int i = 0; i < x_ptr->binaryValues.size(); i++){
-        if (x_ptr->getCompMsg() == x_ptr->binaryValues[i]){
-            x_ptr->setdecodedMsg(x_ptr->character[i]);
+    for ( int i = 0; i < x_ptr->bvVector.size(); i++){
+        if (x_ptr->getCompMsg() == x_ptr->bvVector[i]){
+            x_ptr->setdecodedMsg(x_ptr->charVector[i]);
            
         }
          
@@ -181,7 +181,7 @@ int main()
    
     //create second stuct and load values into it
 
-    std::vector<info1> second(first[0].compMsgVector.size());
+    std::vector<info> second(first[0].compMsgVector.size());
 
     
 
@@ -200,8 +200,8 @@ int main()
 
         
         for (int j = 0; j< first.size(); j++){
-        second[i].character.push_back(first[j].getChar());
-        second[i].binaryValues.push_back(first[j].getBV());
+        second[i].charVector.push_back(first[j].getChar());
+        second[i].bvVector.push_back(first[j].getBV());
         
         
         

@@ -15,10 +15,26 @@ public:
     void setChar(std::string c);
     std::string getBV();  
     void setBV(std::string b);
+    std::vector<std::string>  charVector;    
+    std::vector<std::string>  bvVector;
+    std::string getCompMsg(){
+        return compMsg;
+    };  
+    void setCompMsg(char c){
+        compMsg.push_back(c);
+    };
+    std::string getDecodedMsg(){
+        return decodedMsg;
+    };  
+    void setdecodedMsg(std::string b){
+        decodedMsg=b;
+    };
        
     std::vector<std::string> compMsgVector;
 
 private:
+    std::string compMsg;
+    std::string decodedMsg;
     int value;
     int numBits;
     int frequency;
@@ -60,28 +76,28 @@ std::string info::getBV(void){
 void info::setBV(std::string b){
     binaryValues = b;
 }
-class info1 {
+// class info1 {
 
-    public:
+//     public:
     
-    std::vector<std::string>  character;    
-    std::vector<std::string>  binaryValues;
-    std::string getCompMsg(){
-        return compMsg;
-    };  
-    void setCompMsg(char c){
-        compMsg.push_back(c);
-    };
-    std::string getDecodedMsg(){
-        return decodedMsg;
-    };  
-    void setdecodedMsg(std::string b){
-        decodedMsg=b;
-    };
+//     std::vector<std::string>  character;    
+//     std::vector<std::string>  binaryValues;
+//     std::string getCompMsg(){
+//         return compMsg;
+//     };  
+//     void setCompMsg(char c){
+//         compMsg.push_back(c);
+//     };
+//     std::string getDecodedMsg(){
+//         return decodedMsg;
+//     };  
+//     void setdecodedMsg(std::string b){
+//         decodedMsg=b;
+//     };
     
 
-    private:
-    std::string compMsg;
-    std::string decodedMsg;
+//     private:
+//     std::string compMsg;
+//     std::string decodedMsg;
     
-};
+// };
