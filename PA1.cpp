@@ -18,6 +18,8 @@
 
 
 //N THREADS 
+/* This function takes the key and converts its values to binary. It then goes through the vector of the broken up binary to look for matchs 
+and calculate the frequency of each key value. */
 void * decode(void *x_void_ptr)
 {
 	struct info *x_ptr = (struct info *)x_void_ptr;
@@ -51,6 +53,8 @@ void * decode(void *x_void_ptr)
 
 
 //Mthreads
+
+/* This function decodes the message */
 void * decode1(void *x_void_ptr)
 {
     
@@ -93,7 +97,7 @@ int main()
     
     symbols = stoi(temp1);
 
-
+    /*create our first object*/
     std::vector<info> first(symbols);
  
 
@@ -179,7 +183,7 @@ int main()
         	pthread_join(tid, NULL);
 
    
-    //create second stuct and load values into it
+    //create second object and load values into it
 
     std::vector<info> second(first[0].compMsgVector.size());
 
